@@ -23,7 +23,7 @@ Project has three docker containers: graphql, postgres, grafana
 ## graphql
 
 Python container which makes request on GraphQL service
-and receives data in json format from. 
+and receives data in json format form. 
 
 Example of data:
 
