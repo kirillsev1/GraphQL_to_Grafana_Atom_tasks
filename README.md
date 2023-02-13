@@ -18,8 +18,8 @@ _$ chmod +x start.sh_
 
 _$ ./start.sh_
 
-# After starting the service
-Project runs up three docker containers: graphql, postgres, grafana
+# Project containers
+Project has three docker containers: graphql, postgres, grafana
 ## graphql
 
 Python container which makes request on GraphQL service
