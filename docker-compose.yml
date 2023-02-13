@@ -1,0 +1,73 @@
+version: "3.9"
+
+networks:
+  app-tier:
+    driver: bridge
+
+services:
+  graph:
+    restart: on-failure:10
+    container_name: graphql
+    build:
+      context: .
+      dockerfile: graph/Dockerfile
+    ports:
+      - 8000:8000
+    depends_on:
+      - database
+    environment:
+      DATABASE: ${DATABASE}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_HOST: database
+      DB_PORT: 5432
+    links:
+      - database
+
+    networks:
+      - app-tier
+
+  database:
+    image: postgres
+    container_name: postgres
+    volumes:
+        - db-images:/var/lib/postgresql/data/pgdata
+    environment:
+        POSTGRES_USER: ${DB_USER}
+        POSTGRES_PASSWORD: ${DB_PASSWORD}
+        POSTGRES_DB: "${DATABASE}"
+        POSTGRES_HOST_AUTH_METHOD: trust
+
+        PGDATA: /0var/lib/postgresql/data/pgdata
+    healthcheck:
+      test: [ "CMD", "python main.py" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    ports:
+      - ${DB_PORT}:5432
+
+    networks:
+      - app-tier
+
+
+  grafana:
+    build:
+      context: ./grafana
+    container_name: grafana
+    depends_on:
+      - graph
+      - database
+    ports:
+      - 3000:3000
+    restart: always
+    links:
+      - database
+    volumes:
+      - grafana_data:/var/lib/grafana
+    networks:
+      - app-tier
+
+volumes:
+  db-images:
+  grafana_data:
