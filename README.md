@@ -74,9 +74,8 @@ To run grafana on device:
     Open Data in folder General
 
 ## .env
-### psql
-#### DATABASE - name of database
-#### DB_USER - database user
-#### DB_PASSWORD - user password
-#### DB_PORT - database port
-
+### postgres
+    DATABASE - name of database
+    DB_USER - database user
+    DB_PASSWORD - user password
+    DB_PORT - database port
