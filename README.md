@@ -11,7 +11,7 @@ _sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugi
 # How run
 Fill the .env file with your data
 
-To start docker working run three commands in terminal:
+To run docker, run three commands in a terminal:
 
     docker volume create --name=grafana_data
     docker-compose build
