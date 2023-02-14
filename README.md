@@ -1,22 +1,21 @@
 # Clone repository on desktop
-    Open console and run:
+Open console and run:
+
     git clone https://github.com/kirillsev1/SecondPartAtom_hard
 
 # HOW INSTALL
-_$ sudo apt-get update_
+_sudo apt-get update_
 
-_$ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin_
+_sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin_
 
 # How run
 Fill the .env file with your data
 
-To start docker working run _./start.sh_
+To start docker working run three commands in terminal:
 
-Go to folder with project open terminal and run command:
-
-_$ chmod +x start.sh_
-
-_$ ./start.sh_
+    docker volume create --name=grafana_data
+    docker-compose build
+    docker-compose up
 
 # Project containers
 Project has three docker containers: graphql, postgres, grafana
