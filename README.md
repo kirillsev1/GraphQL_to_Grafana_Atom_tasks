@@ -1,6 +1,6 @@
 # Clone repository on desktop
     Open console and run:
-    git clone https://github.com/kirillsev1/SecondPartAtom-hard-
+    git clone https://github.com/kirillsev1/SecondPartAtom_hard
 
 # HOW INSTALL
 _$ sudo apt-get update_
