@@ -26,6 +26,8 @@ services:
 
     networks:
       - app-tier
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
   database:
     image: postgres
@@ -49,6 +51,8 @@ services:
 
     networks:
       - app-tier
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
 
   grafana:
@@ -67,6 +71,8 @@ services:
       - grafana_data:/var/lib/grafana
     networks:
       - app-tier
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
 volumes:
   db-images:
