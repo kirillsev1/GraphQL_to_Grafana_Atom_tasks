@@ -46,11 +46,11 @@ relevant information for each table
 
 Example table(rockets):
 
-     id |     name     |  type  
-    ----+--------------+--------
-      1 | Falcon 1     | rocket
-      2 | Falcon 9     | rocket
-      3 | Falcon Heavy | rocket
+ id |     name     |  type  
+----|--------------|--------
+  1 | Falcon 1     | rocket
+  2 | Falcon 9     | rocket
+  3 | Falcon Heavy | rocket
 
 ## grafana
 Grafana is data visualization software system. 
