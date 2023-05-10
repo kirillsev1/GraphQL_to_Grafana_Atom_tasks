@@ -4,9 +4,9 @@ Open console and run:
     git clone https://github.com/kirillsev1/SecondPartAtom_hard
 
 # HOW INSTALL
-_sudo apt-get update_
+    sudo apt-get update
 
-_sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin_
+    sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
 # How run
 Fill the .env file with your data
@@ -58,7 +58,7 @@ The project is used to visualize the data mart
 
 To run grafana on device:
 
-    Go to _localhost:3000_
+    Go to localhost:3000
 
     Fill the field user with admin
 
@@ -68,7 +68,7 @@ To run grafana on device:
 
     Find icon with four squares
 
-    Then chouse _"Bowse"_
+    Then chouse "Bowse"
 
     Open Data in folder General
 
